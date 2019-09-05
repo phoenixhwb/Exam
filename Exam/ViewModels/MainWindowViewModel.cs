@@ -98,6 +98,15 @@ namespace Exam.ViewModels
             set => this.RaiseAndSetIfChanged(ref _TimeTickValue, value);
         }
 
+        private int myVar;
+
+        public int MyProperty
+        {
+            get => myVar;
+            set => this.RaiseAndSetIfChanged(ref myVar, value);
+        }
+
+
         #endregion
 
         #region Helper
