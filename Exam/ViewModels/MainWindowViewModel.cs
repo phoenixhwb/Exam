@@ -129,9 +129,9 @@ namespace Exam.ViewModels
             int a = Source.IndexOf("A.");
             if (a < 0)
             {
-                Option1.OptionString = "错误";
+                Option1.OptionString = "❌";
                 Option1.OptionColor = Brushes.Red;
-                Option2.OptionString = "正确";
+                Option2.OptionString = "✔";
                 Option2.OptionColor = Brushes.Green;
             }
             else 
@@ -174,6 +174,7 @@ namespace Exam.ViewModels
 
         private void nextQuestion()
         {
+            TimeStop();
             Message.MessageVisibility = Visibility.Hidden;
             Option3.OptionVisiable = Visibility.Hidden;
             Option4.OptionVisiable = Visibility.Hidden;
@@ -194,23 +195,25 @@ namespace Exam.ViewModels
         }
         private void AnswerJudgement(string selectNo)
         {
-            try
-            {
-                TD.Suspend();
-            }
-            catch (Exception)
-            {
-            }
+            TimeStop();
             if (selectNo == CurrentQuestion.Answer)
             {
                 Count.CountPass += 1;
-                this.Message.MessageString = "正确!";
+                this.Message.MessageString = "回答正确!";
                 this.Message.MessageColor = Brushes.Green;
             }
             else
             {
                 Count.CountFail += 1;
-                this.Message.MessageString = string.Format("错误，正确答案是 {0} !",CurrentQuestion.Answer);
+                
+                if(CurrentQuestion.Class == "判断题")
+                {
+                    this.Message.MessageString = "回答错误" + string.Format("，正确答案是 {0} !", CurrentQuestion.Answer == "A" ? "❌" : "✔");
+                }
+                else
+                {
+                    this.Message.MessageString = "回答错误" + string.Format("，正确答案是 {0} !", CurrentQuestion.Answer);
+                }
                 this.Message.MessageColor = Brushes.Red;
             }
         }
@@ -226,7 +229,19 @@ namespace Exam.ViewModels
             Message.MessageVisibility = Visibility.Visible;
             this.Message.MessageString = "时间到!";
             this.Message.MessageColor = Brushes.Red;
+            Count.CountAll += 1;
             Count.CountFail += 1;
+        }
+        private void TimeStop()
+        {
+            try
+            {
+                TD.Suspend();
+            }
+            catch (Exception)
+            {
+            }
+
         }
 
         private void RenderProgress()

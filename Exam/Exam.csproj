@@ -86,6 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\TimeTick.cs" />
     <Compile Include="Services\GetQuestions.cs" />
     <Compile Include="Services\GetQuestionsFromExcel.cs" />
     <Compile Include="Services\IGetAllQuestions.cs" />
