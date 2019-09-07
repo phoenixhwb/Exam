@@ -28,3 +28,32 @@ D:\OneDrive - Tomra\Software\C#\ExamSystem\Exam\Exam\obj\Debug\Exam.csproj.CopyC
 D:\OneDrive - Tomra\Software\C#\ExamSystem\Exam\Exam\obj\Debug\Exam.exe
 D:\OneDrive - Tomra\Software\C#\ExamSystem\Exam\Exam\obj\Debug\Exam.pdb
 D:\OneDrive - Tomra\Software\C#\ExamSystem\Exam\Exam\obj\Debug\Exam.csprojAssemblyReference.cache
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\Exam.exe.config
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\Exam.exe
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\Exam.pdb
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\DynamicData.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\ReactiveUI.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\Splat.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.Reactive.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.ValueTuple.dll
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\DynamicData.xml
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\ReactiveUI.xml
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\Splat.xml
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.Reactive.xml
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\HWB\Software\GIT\Exam\Exam\bin\Debug\System.ValueTuple.xml
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\MainWindow.g.cs
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\App.g.cs
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam_MarkupCompile.cache
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam_MarkupCompile.lref
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\MainWindow.baml
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.g.resources
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.Properties.Resources.resources
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.cache
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInputs.cache
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.csproj.CopyComplete
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.exe
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.pdb

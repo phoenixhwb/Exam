@@ -5,6 +5,7 @@ using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Exam.Models;
 
 namespace Exam.Services
@@ -36,16 +37,24 @@ namespace Exam.Services
 
         private void ReadExcel(string Path)
         {
-            string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path + ";Extended Properties=Excel 8.0;";
-            OleDbConnection conn = new OleDbConnection(strCon);
-            conn.Open();
-            string strExcel = "";
-            OleDbDataAdapter myCommand = null;
-            DataSet ds = null;
-            strExcel = "select * from [Sheet1$]";
-            myCommand = new OleDbDataAdapter(strExcel, strCon);
-            ds = new DataSet();
-            myCommand.Fill(myData);
+            try
+            {
+                string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Path + ";Extended Properties=Excel 8.0;";
+                OleDbConnection conn = new OleDbConnection(strCon);
+                conn.Open();
+                string strExcel = "";
+                OleDbDataAdapter myCommand = null;
+                DataSet ds = null;
+                strExcel = "select * from [Sheet1$]";
+                myCommand = new OleDbDataAdapter(strExcel, strCon);
+                ds = new DataSet();
+                myCommand.Fill(myData);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
     }

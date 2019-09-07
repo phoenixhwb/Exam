@@ -110,37 +110,61 @@ namespace Exam.ViewModels
         #endregion
 
         #region Helper
+
+
         private void toOptions(string Source)
         {
+            Source = 
+                Source
+                .Replace("A、", "A.")
+                .Replace("B、", "B.")
+                .Replace("C、", "C.")
+                .Replace("D、", "D.")
+                .Replace("A．", "A.")
+                .Replace("B．", "B.")
+                .Replace("C．", "C.")
+                .Replace("D．", "D.")
+                .Trim();
+
             int a = Source.IndexOf("A.");
-            int b = Source.IndexOf("B.");
-            int c = Source.IndexOf("C.");
-            int d = Source.IndexOf("D.");
-            try
+            if (a < 0)
             {
+                Option1.OptionString = "错误";
+                Option1.OptionColor = Brushes.Red;
+                Option2.OptionString = "正确";
+                Option2.OptionColor = Brushes.Green;
+            }
+            else 
+            {
+                int b = Source.IndexOf("B.");
                 Option1.OptionString = Source.Substring(a, b - a - 1);
                 Option1.OptionColor = Brushes.LightBlue;
 
-                Option2.OptionString = Source.Substring(b, c - b - 1);
-                Option2.OptionColor = Brushes.LightBlue;
-
-                Option3.OptionString = Source.Substring(c, d - c - 1);
-                Option3.OptionVisiable = Visibility.Visible;
-
-                Option4.OptionString = Source.Substring(d);
-                Option4.OptionVisiable = Visibility.Visible;
-            }
-            catch (Exception)
-            {
-            }
-            finally
-            {
-                if (a < 0)
+                int c = Source.IndexOf("C.");
+                if (c < 0)
                 {
-                    Option1.OptionString = "错误";
-                    Option1.OptionColor = Brushes.Red;
-                    Option2.OptionString = "正确";
-                    Option2.OptionColor = Brushes.Green;
+                    Option2.OptionString = Source.Substring(b);
+                    Option2.OptionColor = Brushes.LightBlue;
+                }
+                else
+                {
+                    Option2.OptionString = Source.Substring(b, c - b - 1);
+                    Option2.OptionColor = Brushes.LightBlue;
+
+                    int d = Source.IndexOf("D.");
+                    if (d < 0)
+                    {
+                        Option3.OptionString = Source.Substring(c);
+                        Option3.OptionVisiable = Visibility.Visible;
+                    }
+                    else
+                    {
+                        Option3.OptionString = Source.Substring(c, d - c - 1);
+                        Option3.OptionVisiable = Visibility.Visible;
+
+                        Option4.OptionString = Source.Substring(d);
+                        Option4.OptionVisiable = Visibility.Visible;
+                    }
                 }
             }
         }
