@@ -32,7 +32,7 @@ namespace Exam.ViewModels
 
         public CountViewModel()
         {
-            this.CountAll = 0;
+            this.CountAll  = 0;
             this.CountFail = 0;
             this.CountPass = 0;
         }

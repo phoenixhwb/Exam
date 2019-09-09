@@ -86,3 +86,6 @@ E:\Git\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInputs.cache
 E:\Git\Exam\Exam\obj\Debug\Exam.csproj.CopyComplete
 E:\Git\Exam\Exam\obj\Debug\Exam.exe
 E:\Git\Exam\Exam\obj\Debug\Exam.pdb
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Exam.csprojAssemblyReference.cache
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Views\TimeSet.g.cs
+D:\HWB\Software\GIT\Exam\Exam\obj\Debug\Views\TimeSet.baml

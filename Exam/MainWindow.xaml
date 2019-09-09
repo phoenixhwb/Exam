@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" MinHeight="700" MinWidth="1000"
+        Height="650" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -54,9 +55,15 @@
             </Border>
             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="8" Grid.Column="1">
                 <StackPanel>
-                    <Button Name="BtnNextQuestion" Content="Next"
-                        Height="60" Margin="10" FontSize="35"
+                    <Button Name="BtnNextQuestion" Content="下一题"
+                        Height="60" Margin="10" FontSize="30"
                         Command="{Binding NextCommand, Mode=TwoWay}"/>
+                    <Button Name="BtnTimeSet" Content="设置时间"
+                        Height="60" Margin="10" FontSize="30"
+                        Command="{Binding TimeSetCommand, Mode=TwoWay}"/>
+                    <TextBlock Text="限时"/>
+                    <TextBlock Name="TBCurrntTimeSet" Height="40"
+                           Text="{Binding CurrentTimeSet}"/>
                     <TextBlock Text="总答题数"/>
                     <TextBlock Name="TBCountAll" Height="40"
                            Text="{Binding Count.CountAll}"/>
@@ -66,6 +73,7 @@
                     <TextBlock Text="错误题数"/>
                     <TextBlock Name="TBCountWrong" Height="40"
                            Text="{Binding Count.CountFail}"/>
+
                 </StackPanel>
             </Border>
         </Grid>

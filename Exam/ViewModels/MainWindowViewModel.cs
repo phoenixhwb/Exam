@@ -28,9 +28,12 @@ namespace Exam.ViewModels
             Option3 = new OptionViewModel(() => SelectAction("C"));
             Option4 = new OptionViewModel(() => SelectAction("D"));
 
-            NextCommand = new Command(nextQuestion);
-            nextQuestion();
+            CurrentTimeSet  = 10.ToString();
+            NextCommand     = new Command(_NextQuestion);
+            TimeSetCommand  = new Command(_TimeSetCommand);
+            Message.MessageVisibility = Visibility.Hidden;
         }
+
         #endregion
 
         #region Parameter
@@ -44,6 +47,8 @@ namespace Exam.ViewModels
         }
 
         public Command NextCommand { set; get; }
+
+        public Command TimeSetCommand { get; set; }
 
         public OptionViewModel Option1 { set; get; }
         public OptionViewModel Option2 { set; get; }
@@ -98,12 +103,11 @@ namespace Exam.ViewModels
             set => this.RaiseAndSetIfChanged(ref _TimeTickValue, value);
         }
 
-        private int myVar;
-
-        public int MyProperty
+        private string _CurrentTimeSet;
+        public string CurrentTimeSet
         {
-            get => myVar;
-            set => this.RaiseAndSetIfChanged(ref myVar, value);
+            get => _CurrentTimeSet;
+            set => this.RaiseAndSetIfChanged(ref _CurrentTimeSet, value);
         }
 
 
@@ -169,20 +173,20 @@ namespace Exam.ViewModels
             }
         }
 
-        private Random rd = new Random();
+        private Random RD = new Random();
         private Thread TD;
 
-        private void nextQuestion()
+        private void _NextQuestion()
         {
             TimeStop();
             Message.MessageVisibility = Visibility.Hidden;
             Option3.OptionVisiable = Visibility.Hidden;
             Option4.OptionVisiable = Visibility.Hidden;
 
-            int currentNo = rd.Next(GetQuestions.Result.Count);
+            int currentNo = RD.Next(GetQuestions.Result.Count);
             CurrentQuestion = GetQuestions.Result[currentNo];
 
-            TD = new Thread(new ThreadStart(() => TimeUp(10000)));
+            TD = new Thread(new ThreadStart(() => TimeUp(int.Parse(CurrentTimeSet)*1000)));
             TD.Start();
 
         }
@@ -243,11 +247,14 @@ namespace Exam.ViewModels
             }
 
         }
-
-        private void RenderProgress()
+        private void _TimeSetCommand()
         {
-
+            Views.TimeSetView TSV = new Views.TimeSetView(int.Parse(CurrentTimeSet));
+            TimeStop();
+            TSV.ShowDialog();
+            CurrentTimeSet = TSV.TimeSet.ToString();
         }
+
         #endregion
     }
 }
